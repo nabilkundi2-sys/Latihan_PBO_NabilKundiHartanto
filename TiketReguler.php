@@ -30,17 +30,6 @@ class TiketRegular extends Tiket {
     // KONSTRUKTOR
     // ========================================================
 
-    /**
-     * Constructor TiketRegular
-     *
-     * @param int    $id_tiket
-     * @param string $nama_film
-     * @param string $jadwal_tayang
-     * @param int    $jumlah_kursi
-     * @param float  $hargaDasarTiket
-     * @param string $tipeAudio
-     * @param string $lokasiBaris
-     */
     public function __construct(
         int $id_tiket,
         string $nama_film,
@@ -56,7 +45,15 @@ class TiketRegular extends Tiket {
     }
 
     // ========================================================
-    // GETTER & SETTER
+    // GETTER PROPERTI INDUK
+    // ========================================================
+
+    public function getNamaFilm(): string     { return $this->nama_film; }
+    public function getJadwalTayang(): string { return $this->jadwal_tayang; }
+    public function getJumlahKursi(): int     { return $this->jumlah_kursi; }
+
+    // ========================================================
+    // GETTER & SETTER PROPERTI TAMBAHAN
     // ========================================================
 
     public function getTipeAudio(): string {
@@ -81,7 +78,7 @@ class TiketRegular extends Tiket {
 
     /**
      * Hitung total harga tiket Regular
-     * (Tidak ada biaya tambahan untuk studio Regular)
+     * Total Harga = jumlah_kursi * hargaDasarTiket
      *
      * @return float
      */

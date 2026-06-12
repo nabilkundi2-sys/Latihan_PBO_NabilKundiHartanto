@@ -30,17 +30,6 @@ class TiketIMAX extends Tiket {
     // KONSTRUKTOR
     // ========================================================
 
-    /**
-     * Constructor TiketIMAX
-     *
-     * @param int    $id_tiket
-     * @param string $nama_film
-     * @param string $jadwal_tayang
-     * @param int    $jumlah_kursi
-     * @param float  $hargaDasarTiket
-     * @param string $kacamata3dId
-     * @param string $efekGerakFitur
-     */
     public function __construct(
         int $id_tiket,
         string $nama_film,
@@ -56,7 +45,15 @@ class TiketIMAX extends Tiket {
     }
 
     // ========================================================
-    // GETTER & SETTER
+    // GETTER PROPERTI INDUK
+    // ========================================================
+
+    public function getNamaFilm(): string     { return $this->nama_film; }
+    public function getJadwalTayang(): string { return $this->jadwal_tayang; }
+    public function getJumlahKursi(): int     { return $this->jumlah_kursi; }
+
+    // ========================================================
+    // GETTER & SETTER PROPERTI TAMBAHAN
     // ========================================================
 
     public function getKacamata3dId(): string {
@@ -82,7 +79,6 @@ class TiketIMAX extends Tiket {
     /**
      * Hitung total harga tiket IMAX
      * Total Harga = (jumlah_kursi * hargaDasarTiket) + 35000
-     * (Biaya tambahan teknologi proyeksi layar lebar IMAX dan audio flat Rp35.000)
      *
      * @return float
      */

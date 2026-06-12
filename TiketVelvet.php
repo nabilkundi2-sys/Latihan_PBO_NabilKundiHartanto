@@ -30,17 +30,6 @@ class TiketVelvet extends Tiket {
     // KONSTRUKTOR
     // ========================================================
 
-    /**
-     * Constructor TiketVelvet
-     *
-     * @param int    $id_tiket
-     * @param string $nama_film
-     * @param string $jadwal_tayang
-     * @param int    $jumlah_kursi
-     * @param float  $hargaDasarTiket
-     * @param bool   $bantalSelimutPack
-     * @param string $layananButler
-     */
     public function __construct(
         int $id_tiket,
         string $nama_film,
@@ -56,7 +45,15 @@ class TiketVelvet extends Tiket {
     }
 
     // ========================================================
-    // GETTER & SETTER
+    // GETTER PROPERTI INDUK
+    // ========================================================
+
+    public function getNamaFilm(): string     { return $this->nama_film; }
+    public function getJadwalTayang(): string { return $this->jadwal_tayang; }
+    public function getJumlahKursi(): int     { return $this->jumlah_kursi; }
+
+    // ========================================================
+    // GETTER & SETTER PROPERTI TAMBAHAN
     // ========================================================
 
     public function getBantalSelimutPack(): bool {
@@ -82,7 +79,6 @@ class TiketVelvet extends Tiket {
     /**
      * Hitung total harga tiket Velvet
      * Total Harga = (jumlah_kursi * hargaDasarTiket) * 1.50
-     * (Surcharge/biaya tambahan kelas premium sebesar 50% dari total harga dasar)
      *
      * @return float
      */
